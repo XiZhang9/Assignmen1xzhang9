@@ -13,7 +13,8 @@
         android:id="@+id/playeronebutton"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:textSize="73sp" />
+        android:textSize="73sp"
+        android:onClick="PlayeroneClicked" />
 
     <Button
         android:layout_width="wrap_content"
@@ -22,7 +23,8 @@
         android:id="@+id/player2button"
         android:textSize="73sp"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="PlayertwoClicked" />
 
     <Button
         android:layout_width="wrap_content"
@@ -31,18 +33,7 @@
         android:id="@+id/player3button"
         android:layout_alignParentBottom="true"
         android:layout_alignEnd="@+id/playeronebutton"
-        android:textSize="73sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="WHO WILL WIN?"
-        android:id="@+id/winner3textView"
-        android:layout_below="@+id/playeronebutton"
-        android:layout_alignStart="@+id/playeronebutton"
-        android:layout_above="@+id/player2button"
-        android:layout_alignEnd="@+id/player2button"
-        android:textSize="50dp" />
+        android:textSize="73sp"
+        android:onClick="PlayerthreeClicked" />
 
 </RelativeLayout>

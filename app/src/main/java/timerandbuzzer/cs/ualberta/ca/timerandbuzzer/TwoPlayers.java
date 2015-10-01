@@ -1,5 +1,6 @@
 package timerandbuzzer.cs.ualberta.ca.timerandbuzzer;
 
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import java.util.concurrent.TimeUnit;
 
 public class TwoPlayers extends AppCompatActivity {
+    int playeronewins=0;
+    int playertwowins=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,16 +42,33 @@ public class TwoPlayers extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
     public void Player1Clicked(View player1button){
-        Button button=(Button) player1button;
-        TextView winner2view=(TextView) this.findViewById(R.id.winner2textView);
-        winner2view.setText("PLAYER 1 WINS");
+        if (playertwowins==1){
+            player1button.setEnabled(false);
+            ((Button) player1button).setText("TRY HARDER");
+        }
+        else {
+            Button button = (Button) player1button;
+            ((Button) player1button).setText("WINNER");
+            ((Button) player1button).setBackgroundColor(Color.RED);
+            player1button.setEnabled(false);
+            playeronewins = 1;
+        }
 
     }
-    public void Player2Clicked(View player1button){
-        Button button=(Button) player1button;
-        TextView winner2view=(TextView) this.findViewById(R.id.winner2textView);
-        winner2view.setText("PLAYER 2 WINS");
+    public void Player2Clicked(View player2button){
+        if (playeronewins==1){
+            player2button.setEnabled(false);
+            ((Button) player2button).setText("TRY HARDER");
+        }
+        else {
+            Button button = (Button) player2button;
+            ((Button) player2button).setText("WINNER");
+            ((Button) player2button).setBackgroundColor(Color.RED);
+            player2button.setEnabled(false);
+            playertwowins=1;
+        }
     }
 
 }

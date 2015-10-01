@@ -41,6 +41,7 @@ public class StartTimer extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void StartClicked(final View startbutton) throws InterruptedException {
+        TextView targettextview = (TextView) this.findViewById(R.id.timetextView);
         final Button button = (Button) startbutton;
         int seconds = 10 + (int) (Math.random() * (4911));
         if (((Button) startbutton).getText()=="START") {
@@ -54,7 +55,6 @@ public class StartTimer extends AppCompatActivity {
             long reaction_time=after_reaction-before_reaction;
             float finaltime=(float) (reaction_time/1000000000.0);
             String timestring=String.format("%.5f",finaltime);
-            TextView targettextview = (TextView) this.findViewById(R.id.timetextView);
             targettextview.setText("Reaction time "+timestring+" Seconds");
 
             before_reaction=0;
@@ -63,7 +63,6 @@ public class StartTimer extends AppCompatActivity {
             ((Button) startbutton).setText("START AGAIN");
         }
         else {
-            TextView targettextview = (TextView) this.findViewById(R.id.timetextView);
             targettextview.setText("Wait for reaction");
             TimeUnit.MILLISECONDS.sleep(seconds);
             ((Button) startbutton).setText("CLICK");

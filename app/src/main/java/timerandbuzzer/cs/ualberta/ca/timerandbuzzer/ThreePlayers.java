@@ -1,11 +1,18 @@
 package timerandbuzzer.cs.ualberta.ca.timerandbuzzer;
 
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class ThreePlayers extends ActionBarActivity {
+public class ThreePlayers extends AppCompatActivity {
+    int player1wins=0;
+    int player2wins=0;
+    int player3wins=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +40,56 @@ public class ThreePlayers extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void PlayeroneClicked(View playeronebutton) {
+        if (player2wins == 1) {
+            playeronebutton.setEnabled(false);
+            ((Button) playeronebutton).setText("TRY HARDER");
+        }
+        else if (player3wins == 1) {
+            playeronebutton.setEnabled(false);
+            ((Button) playeronebutton).setText("TRY HARDER");
+        } else {
+            Button button = (Button) playeronebutton;
+            ((Button) playeronebutton).setText("WINNER");
+            ((Button) playeronebutton).setBackgroundColor(Color.RED);
+            playeronebutton.setEnabled(false);
+            player1wins = 1;
+        }
+
+    }
+    public void PlayertwoClicked(View playertwobutton) {
+        if (player1wins == 1) {
+            playertwobutton.setEnabled(false);
+            ((Button) playertwobutton).setText("TRY HARDER");
+        }
+        else if (player3wins == 1) {
+            playertwobutton.setEnabled(false);
+            ((Button) playertwobutton).setText("TRY HARDER");
+        } else {
+            Button button = (Button) playertwobutton;
+            ((Button) playertwobutton).setText("WINNER");
+            ((Button) playertwobutton).setBackgroundColor(Color.RED);
+            playertwobutton.setEnabled(false);
+            player2wins = 1;
+        }
+
+    }
+    public void PlayerthreeClicked(View playerthreebutton) {
+        if (player1wins == 1) {
+            playerthreebutton.setEnabled(false);
+            ((Button) playerthreebutton).setText("TRY HARDER");
+        }
+        else if (player2wins == 1) {
+            playerthreebutton.setEnabled(false);
+            ((Button) playerthreebutton).setText("TRY HARDER");
+        } else {
+            Button button = (Button) playerthreebutton;
+            ((Button) playerthreebutton).setText("WINNER");
+            ((Button) playerthreebutton).setBackgroundColor(Color.RED);
+            playerthreebutton.setEnabled(false);
+            player3wins = 1;
+        }
+
     }
 }
