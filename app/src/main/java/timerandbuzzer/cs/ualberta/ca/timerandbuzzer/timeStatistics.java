@@ -12,9 +12,21 @@ public class timeStatistics extends StartTimer {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_statistics);
-        String average=TimeController.average();
+        String average = TimeController.average();
         TextView targettextview = (TextView) this.findViewById(R.id.averagetextView);
         targettextview.setText("Overall Average: " + average);
+        String average10 = TimeController.average10();
+        TextView target10textview = (TextView) this.findViewById(R.id.average10textView);
+        target10textview.setText("Last 10 Average: " + average10);
+        String average100 = TimeController.average100();
+        TextView target100textview = (TextView) this.findViewById(R.id.average100textView);
+        target100textview.setText("Last 100 Average: " + average100);
+        String maxtime = TimeController.Maxtime();
+        TextView maxtextview = (TextView) this.findViewById(R.id.maxtextView);
+        maxtextview.setText("The Max Reaction time: " + maxtime);
+        String mintime = TimeController.Mintime();
+        TextView mintextview = (TextView) this.findViewById(R.id.mintextView);
+        mintextview.setText("The Min Reaction time: " + mintime);
     }
 
     @Override

@@ -48,6 +48,10 @@
             android:name=".TwoPlayerList"
             android:label="@string/title_activity_two_player_list" >
         </activity>
+        <activity
+            android:name=".Nodata"
+            android:label="@string/title_activity_nodata" >
+        </activity>
     </application>
 
 </manifest>

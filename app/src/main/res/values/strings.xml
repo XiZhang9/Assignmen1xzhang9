@@ -28,4 +28,5 @@
     <string name="statistic">RECORD STATISTICS</string>
     <string name="title_activity_two_player_list">TwoPlayerList</string>
     <string name="buzzerrecord">BUZZERS RECORDS</string>
+    <string name="title_activity_nodata">Nodata</string>
 </resources>

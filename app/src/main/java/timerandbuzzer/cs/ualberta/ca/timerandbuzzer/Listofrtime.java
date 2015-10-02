@@ -12,7 +12,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Listofrtime extends AppCompatActivity {
+public class Listofrtime extends StartTimer {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

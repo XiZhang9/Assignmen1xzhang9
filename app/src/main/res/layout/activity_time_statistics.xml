@@ -13,6 +13,55 @@
         android:id="@+id/averagetextView"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/average10textView"
+        android:layout_below="@+id/averagetextView"
+        android:layout_alignParentStart="true"
+        android:textSize="30dp"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/average100textView"
+        android:layout_below="@+id/average10textView"
+        android:layout_alignParentStart="true"
+        android:textSize="30dp"
+        android:layout_alignEnd="@+id/average10textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/maxtextView"
+        android:layout_below="@+id/average100textView"
+        android:layout_alignParentStart="true"
+        android:textSize="30dp"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/mintextView"
+        android:layout_below="@+id/maxtextView"
+        android:layout_alignParentStart="true"
+        android:textSize="30dp"
+        android:layout_alignEnd="@+id/maxtextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/medtextView"
+        android:layout_below="@+id/mintextView"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
