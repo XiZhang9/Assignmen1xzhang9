@@ -1,5 +1,6 @@
 package timerandbuzzer.cs.ualberta.ca.timerandbuzzer;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class TwoPlayers extends AppCompatActivity {
     int playeronewins=0;
     int playertwowins=0;
+    recordListController recordcontroller= new recordListController();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,7 @@ public class TwoPlayers extends AppCompatActivity {
         }
         else {
             Button button = (Button) player1button;
+            recordcontroller.addrecord(new playersRecord("PLAYER 1"));
             ((Button) player1button).setText("WINNER");
             ((Button) player1button).setBackgroundColor(Color.RED);
             player1button.setEnabled(false);
@@ -64,11 +67,16 @@ public class TwoPlayers extends AppCompatActivity {
         }
         else {
             Button button = (Button) player2button;
+            recordcontroller.addrecord(new playersRecord("PLAYER 2"));
             ((Button) player2button).setText("WINNER");
             ((Button) player2button).setBackgroundColor(Color.RED);
             player2button.setEnabled(false);
             playertwowins=1;
         }
+    }
+    public void GotwoData(MenuItem menuItem) {
+        Intent intent = new Intent(TwoPlayers.this, TwoPlayerList.class);
+        startActivity(intent);
     }
 
 }

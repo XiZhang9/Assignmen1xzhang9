@@ -21,4 +21,11 @@
     <string name="player3">PLAYER 3</string>
     <string name="player4">PLAYER 4</string>
     <string name="whowin">Who will WIN?</string>
+    <string name="record" />
+    <string name="timerecord">TIME RECORDS</string>
+    <string name="title_activity_listofrtime">Listofrtime</string>
+    <string name="title_activity_time_statistics">timeStatistics</string>
+    <string name="statistic">RECORD STATISTICS</string>
+    <string name="title_activity_two_player_list">TwoPlayerList</string>
+    <string name="buzzerrecord">BUZZERS RECORDS</string>
 </resources>

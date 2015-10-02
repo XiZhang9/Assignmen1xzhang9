@@ -1,5 +1,6 @@
 package timerandbuzzer.cs.ualberta.ca.timerandbuzzer;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +9,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.support.v7.widget.PopupMenu;
 
 import java.util.concurrent.TimeUnit;
 
 public class StartTimer extends AppCompatActivity {
+    timelistcontroller TimeController= new timelistcontroller();
     long before_reaction=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,7 @@ public class StartTimer extends AppCompatActivity {
             long after_reaction=System.nanoTime();
             long reaction_time=after_reaction-before_reaction;
             float finaltime=(float) (reaction_time/1000000000.0);
+            TimeController.addtime(new reactiontime(finaltime));
             String timestring=String.format("%.5f",finaltime);
             targettextview.setText("Reaction time "+timestring+" Seconds");
 
@@ -68,6 +72,10 @@ public class StartTimer extends AppCompatActivity {
             ((Button) startbutton).setText("CLICK");
             before_reaction=System.nanoTime();
         }
+    }
+    public void GoData(MenuItem menuItem) {
+        Intent intent = new Intent(StartTimer.this, Listofrtime.class);
+        startActivity(intent);
     }
 
 }

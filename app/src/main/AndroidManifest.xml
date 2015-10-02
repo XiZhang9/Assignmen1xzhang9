@@ -36,6 +36,18 @@
             android:name=".FourPlayers"
             android:label="@string/title_activity_four_players" >
         </activity>
+        <activity
+            android:name=".Listofrtime"
+            android:label="@string/title_activity_listofrtime" >
+        </activity>
+        <activity
+            android:name=".timeStatistics"
+            android:label="@string/title_activity_time_statistics" >
+        </activity>
+        <activity
+            android:name=".TwoPlayerList"
+            android:label="@string/title_activity_two_player_list" >
+        </activity>
     </application>
 
 </manifest>
