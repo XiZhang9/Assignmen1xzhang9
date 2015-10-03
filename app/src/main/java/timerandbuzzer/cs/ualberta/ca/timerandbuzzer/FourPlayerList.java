@@ -3,7 +3,6 @@ package timerandbuzzer.cs.ualberta.ca.timerandbuzzer;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,24 +13,23 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Listofrtime extends StartTimer {
+public class FourPlayerList extends FourPlayers {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listofrtime);
-        ReactionTimeList reactionlist;
-        ListView listView1 = (ListView)findViewById(R.id.TimerlistView);
-        Collection<reactiontime> rtimes = timelistcontroller.getTimeList().GetReactionTime();
-        final ArrayList<reactiontime> list = new ArrayList<reactiontime>(rtimes);
-        ArrayAdapter<reactiontime> timeAdapter=new ArrayAdapter<reactiontime>(this, android.R.layout.simple_list_item_1, list);
-        listView1.setAdapter(timeAdapter);
+        setContentView(R.layout.activity_four_player_list);
+        ListView listView4 = (ListView)findViewById(R.id.fourPlayerslistView);
+        Collection<playersRecord4> psrcd4= recordcontroller4.getrecordList().getPlayerRecordList();
+        final ArrayList<playersRecord4> list4 = new ArrayList<playersRecord4>(psrcd4);
+        ArrayAdapter<playersRecord4> recordAdapter4=new ArrayAdapter<playersRecord4>(this, android.R.layout.simple_list_item_1, list4);
+        listView4.setAdapter(recordAdapter4);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_listofrtime, menu);
+        getMenuInflater().inflate(R.menu.menu_four_player_list, menu);
         return true;
     }
 
@@ -49,21 +47,15 @@ public class Listofrtime extends StartTimer {
 
         return super.onOptionsItemSelected(item);
     }
-    public void Goaverage(MenuItem menuItem) {
-        if (TimeController.getlistsize()==0){
-            Intent intent = new Intent(Listofrtime.this, Nodata.class);
-            startActivity(intent);
-
-        }
-        else {
-            Intent intent = new Intent(Listofrtime.this, timeStatistics.class);
-            startActivity(intent);
-        }
-    }
-    public void GoClearTime(View view){
-        TimeController.ClearList();
+    public void GoClear4(View view) {
+        recordcontroller4.ClearrecordList();
         Toast.makeText(getApplicationContext(), "Data is cleared", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(Listofrtime.this, StartTimer.class);
+        Intent intent = new Intent(FourPlayerList.this, FourPlayers.class);
+        startActivity(intent);
+    }
+    public void Gobuzz4(MenuItem menuItem) {
+
+        Intent intent = new Intent(FourPlayerList.this, FourBuzzercounts.class);
         startActivity(intent);
     }
 }

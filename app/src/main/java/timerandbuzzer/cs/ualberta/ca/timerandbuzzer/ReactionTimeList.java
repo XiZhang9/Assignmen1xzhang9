@@ -21,5 +21,8 @@ public class ReactionTimeList {
     public int ListSize(){
         return reactionTimeList.size();
     }
+    public void Listclear(){
+        reactionTimeList.clear();
+    }
 }
 

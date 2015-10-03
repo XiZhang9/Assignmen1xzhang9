@@ -52,6 +52,26 @@
             android:name=".Nodata"
             android:label="@string/title_activity_nodata" >
         </activity>
+        <activity
+            android:name=".TwoBuzzercounts"
+            android:label="@string/title_activity_two_buzzercounts" >
+        </activity>
+        <activity
+            android:name=".ThreePlayerLIst"
+            android:label="@string/title_activity_three_player_list" >
+        </activity>
+        <activity
+            android:name=".FourPlayerList"
+            android:label="@string/title_activity_four_player_list" >
+        </activity>
+        <activity
+            android:name=".ThreeBuzzercounts"
+            android:label="@string/title_activity_three_buzzercounts" >
+        </activity>
+        <activity
+            android:name=".FourBuzzercounts"
+            android:label="@string/title_activity_four_buzzercounts" >
+        </activity>
     </application>
 
 </manifest>

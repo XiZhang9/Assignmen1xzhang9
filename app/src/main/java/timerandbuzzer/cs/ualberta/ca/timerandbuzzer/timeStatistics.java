@@ -24,9 +24,21 @@ public class timeStatistics extends StartTimer {
         String maxtime = TimeController.Maxtime();
         TextView maxtextview = (TextView) this.findViewById(R.id.maxtextView);
         maxtextview.setText("The Max Reaction time: " + maxtime);
+        String max10time = TimeController.Max10time();
+        TextView max10textview = (TextView) this.findViewById(R.id.max10textView);
+        max10textview.setText("Last 10 Maximum: " + max10time);
+        String max100time = TimeController.Max100time();
+        TextView max100textview = (TextView) this.findViewById(R.id.max100textView);
+        max100textview.setText("Last 100 Maximum: " + max100time);
         String mintime = TimeController.Mintime();
         TextView mintextview = (TextView) this.findViewById(R.id.mintextView);
         mintextview.setText("The Min Reaction time: " + mintime);
+        String min10time = TimeController.Min10time();
+        TextView min10textview = (TextView) this.findViewById(R.id.min10textView);
+        min10textview.setText("Last 10 Minimum: " + min10time);
+        String min100time = TimeController.Min100time();
+        TextView min100textview = (TextView) this.findViewById(R.id.min100textView);
+        min100textview.setText("Last 100 Minimum: " + min100time);
     }
 
     @Override

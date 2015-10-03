@@ -1,9 +1,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="timerandbuzzer.cs.ualberta.ca.timerandbuzzer.TwoPlayerList">
+    tools:context="timerandbuzzer.cs.ualberta.ca.timerandbuzzer.FourPlayerList">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/action_buzzer2" android:title="@string/buzzercount"
-        android:onClick="Gobuzz" />
+    <item android:id="@+id/action_buzzer4" android:title="@string/buzzercount"
+        android:onClick="Gobuzz4" />
 </menu>

@@ -29,4 +29,11 @@
     <string name="title_activity_two_player_list">TwoPlayerList</string>
     <string name="buzzerrecord">BUZZERS RECORDS</string>
     <string name="title_activity_nodata">Nodata</string>
+    <string name="clear">CLEAR</string>
+    <string name="title_activity_two_buzzercounts">TwoBuzzercounts</string>
+    <string name="buzzercount">BUZZER COUNTS</string>
+    <string name="title_activity_three_player_list">ThreePlayerLIst</string>
+    <string name="title_activity_four_player_list">FourPlayerList</string>
+    <string name="title_activity_three_buzzercounts">ThreeBuzzercounts</string>
+    <string name="title_activity_four_buzzercounts">FourBuzzercounts</string>
 </resources>

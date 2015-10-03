@@ -1,5 +1,6 @@
 package timerandbuzzer.cs.ualberta.ca.timerandbuzzer;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ public class ThreePlayers extends AppCompatActivity {
     int player1wins=0;
     int player2wins=0;
     int player3wins=0;
+    recordListController3 recordcontroller3= new recordListController3();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class ThreePlayers extends AppCompatActivity {
             ((Button) playeronebutton).setText("TRY HARDER");
         } else {
             Button button = (Button) playeronebutton;
+            recordcontroller3.addrecord(new playersRecord3("PLAYER 1"));
             ((Button) playeronebutton).setText("WINNER");
             ((Button) playeronebutton).setBackgroundColor(Color.RED);
             playeronebutton.setEnabled(false);
@@ -68,6 +71,7 @@ public class ThreePlayers extends AppCompatActivity {
             ((Button) playertwobutton).setText("TRY HARDER");
         } else {
             Button button = (Button) playertwobutton;
+            recordcontroller3.addrecord(new playersRecord3("PLAYER 2"));
             ((Button) playertwobutton).setText("WINNER");
             ((Button) playertwobutton).setBackgroundColor(Color.RED);
             playertwobutton.setEnabled(false);
@@ -85,11 +89,16 @@ public class ThreePlayers extends AppCompatActivity {
             ((Button) playerthreebutton).setText("TRY HARDER");
         } else {
             Button button = (Button) playerthreebutton;
+            recordcontroller3.addrecord(new playersRecord3("PLAYER 3"));
             ((Button) playerthreebutton).setText("WINNER");
             ((Button) playerthreebutton).setBackgroundColor(Color.RED);
             playerthreebutton.setEnabled(false);
             player3wins = 1;
         }
 
+    }
+    public void GothreeData(MenuItem menuItem) {
+        Intent intent = new Intent(ThreePlayers.this, ThreePlayerLIst.class);
+        startActivity(intent);
     }
 }

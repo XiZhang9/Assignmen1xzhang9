@@ -1,18 +1,18 @@
 package timerandbuzzer.cs.ualberta.ca.timerandbuzzer;
 
 /**
- * Created by xzhang9 on 10/2/15.
+ * Created by xzhang9 on 10/3/15.
  */
-public class recordListController {
-    private static PlayRecordList playRecordList = null;
+public class recordListController4 {
+    private static PlayRecordList4 playRecordList4 = null;
     // Warning: throws a runTimeException
-    static public PlayRecordList getrecordList() {
-        if (playRecordList == null) {
-            playRecordList=new PlayRecordList();
+    static public PlayRecordList4 getrecordList() {
+        if (playRecordList4 == null) {
+            playRecordList4=new PlayRecordList4();
         }
-        return playRecordList;
+        return playRecordList4;
     }
-    public void addrecord(playersRecord precord){
+    public void addrecord(playersRecord4 precord){
         getrecordList().addRecord(precord);
     }
 
@@ -35,6 +35,4 @@ public class recordListController {
     public void ClearrecordList(){
         getrecordList().Listrecordclear();
     }
-
-
 }

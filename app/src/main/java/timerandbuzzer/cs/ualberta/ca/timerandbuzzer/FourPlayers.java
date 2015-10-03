@@ -1,5 +1,6 @@
 package timerandbuzzer.cs.ualberta.ca.timerandbuzzer;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ public class FourPlayers extends AppCompatActivity {
     int player2win=0;
     int player3win=0;
     int player4win=0;
+    recordListController4 recordcontroller4= new recordListController4();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,7 @@ public class FourPlayers extends AppCompatActivity {
             ((Button) playerbutton1).setText("TRY HARDER");
         } else {
             Button button = (Button) playerbutton1;
+            recordcontroller4.addrecord(new playersRecord4("PLAYER 1"));
             ((Button) playerbutton1).setText("WINNER");
             ((Button) playerbutton1).setBackgroundColor(Color.RED);
             playerbutton1.setEnabled(false);
@@ -77,6 +80,7 @@ public class FourPlayers extends AppCompatActivity {
             ((Button) playerbutton2).setText("TRY HARDER");
         } else {
             Button button = (Button) playerbutton2;
+            recordcontroller4.addrecord(new playersRecord4("PLAYER 2"));
             ((Button) playerbutton2).setText("WINNER");
             ((Button) playerbutton2).setBackgroundColor(Color.RED);
             playerbutton2.setEnabled(false);
@@ -98,6 +102,7 @@ public class FourPlayers extends AppCompatActivity {
             ((Button) playerbutton3).setText("TRY HARDER");
         } else {
             Button button = (Button) playerbutton3;
+            recordcontroller4.addrecord(new playersRecord4("PLAYER 3"));
             ((Button) playerbutton3).setText("WINNER");
             ((Button) playerbutton3).setBackgroundColor(Color.RED);
             playerbutton3.setEnabled(false);
@@ -119,11 +124,16 @@ public class FourPlayers extends AppCompatActivity {
             ((Button) playerbutton4).setText("TRY HARDER");
         } else {
             Button button = (Button) playerbutton4;
+            recordcontroller4.addrecord(new playersRecord4("PLAYER 4"));
             ((Button) playerbutton4).setText("WINNER");
             ((Button) playerbutton4).setBackgroundColor(Color.RED);
             playerbutton4.setEnabled(false);
             player4win = 1;
         }
 
+    }
+    public void GofourData(MenuItem menuItem) {
+        Intent intent = new Intent(FourPlayers.this, FourPlayerList.class);
+        startActivity(intent);
     }
 }

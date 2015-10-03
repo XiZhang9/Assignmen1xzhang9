@@ -1,5 +1,7 @@
 package timerandbuzzer.cs.ualberta.ca.timerandbuzzer;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -38,8 +40,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void GoTimer(View view){
-        Intent intent= new Intent(MainActivity.this,StartTimer.class);
-        startActivity(intent);
+        AlertDialog hint = new AlertDialog.Builder(MainActivity.this).create();
+        hint.setTitle("How to Play?");
+        hint.setMessage("Press START then wait until the button tells you to CLICK ");
+        hint.setButton(AlertDialog.BUTTON_NEUTRAL, "GOT IT",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        Intent intent= new Intent(MainActivity.this,StartTimer.class);
+                        startActivity(intent);
+                    }
+                });
+        hint.show();
     }
     public void GoBuzzer(View view){
         Intent intent= new Intent(MainActivity.this,Players.class);
