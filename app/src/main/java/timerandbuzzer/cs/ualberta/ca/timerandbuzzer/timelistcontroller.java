@@ -162,7 +162,7 @@ public class timelistcontroller {
     public String Min100time() {
         ReactionTimeList findMin100list = timelistcontroller.getTimeList();
         float size = (float) (timelistcontroller.getTimeList().ListSize());
-        if (size >= 10) {
+        if (size >= 100) {
             float mint100 = findMin100list.GetReactionTime().get((int)(size-100)).GetreactionTime();
             for (int i = (int) (size - 99); i < findMin100list.ListSize(); i++) {
                 if ((findMin100list.GetReactionTime().get(i).GetreactionTime()) < mint100) {
